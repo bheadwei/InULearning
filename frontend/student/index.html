@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InULearning - 學生端</title>
+    <link rel="stylesheet" href="../shared/styles/common.css">
+    <link rel="stylesheet" href="styles/student.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 頁面標題 -->
+        <header class="header">
+            <div class="header-content">
+                <h1>InULearning 個人化學習平台</h1>
+                <div class="user-info">
+                    <span id="username">學生姓名</span>
+                    <button id="logout-btn" class="btn btn-secondary">登出</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要內容區域 -->
+        <main class="main-content">
+            <!-- 導航選單 -->
+            <nav class="sidebar">
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active" data-section="dashboard">學習儀表板</a></li>
+                    <li><a href="#" class="nav-link" data-section="practice">開始練習</a></li>
+                    <li><a href="#" class="nav-link" data-section="progress">學習進度</a></li>
+                    <li><a href="#" class="nav-link" data-section="resources">學習資源</a></li>
+                    <li><a href="#" class="nav-link" data-section="similar">相似題練習</a></li>
+                </ul>
+            </nav>
+
+            <!-- 內容區域 -->
+            <div class="content-area">
+                <!-- 學習儀表板 -->
+                <section id="dashboard" class="content-section active">
+                    <h2>學習儀表板</h2>
+                    <div class="dashboard-cards">
+                        <div class="card">
+                            <h3>今日學習</h3>
+                            <div class="stat-number">45</div>
+                            <div class="stat-label">分鐘</div>
+                        </div>
+                        <div class="card">
+                            <h3>完成題目</h3>
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">題</div>
+                        </div>
+                        <div class="card">
+                            <h3>正確率</h3>
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">準確度</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 開始練習 -->
+                <section id="practice" class="content-section">
+                    <h2>開始練習</h2>
+                    <div class="practice-form">
+                        <form id="generate-questions-form">
+                            <div class="form-group">
+                                <label for="subject">學科：</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">請選擇學科</option>
+                                    <option value="mathematics">數學</option>
+                                    <option value="physics">物理</option>
+                                    <option value="chemistry">化學</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="difficulty">難度：</label>
+                                <select id="difficulty" name="difficulty" required>
+                                    <option value="">請選擇難度</option>
+                                    <option value="easy">簡單</option>
+                                    <option value="medium">中等</option>
+                                    <option value="hard">困難</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="question-count">題目數量：</label>
+                                <input type="number" id="question-count" name="question_count" min="1" max="20"
+                                    value="5" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">開始練習</button>
+                        </form>
+                    </div>
+                    <div id="questions-container" class="questions-container" style="display: none;">
+                        <!-- 題目將在這裡動態載入 -->
+                    </div>
+                </section>
+
+                <!-- 學習進度 -->
+                <section id="progress" class="content-section">
+                    <h2>學習進度</h2>
+                    <div id="progress-container">
+                        <div class="loading">載入中...</div>
+                    </div>
+                </section>
+
+                <!-- 學習資源 -->
+                <section id="resources" class="content-section">
+                    <h2>學習資源</h2>
+                    <div id="resources-container">
+                        <div class="loading">載入中...</div>
+                    </div>
+                </section>
+
+                <!-- 相似題練習 -->
+                <section id="similar" class="content-section">
+                    <h2>相似題練習</h2>
+                    <div id="similar-container">
+                        <p>請先完成基礎練習，系統會自動推薦相似題目。</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- 載入 JavaScript -->
+    <script src="../shared/utils/api.js"></script>
+    <script src="../shared/utils/auth.js"></script>
+    <script src="scripts/student.js"></script>
+</body>
+
+</html>

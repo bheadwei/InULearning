@@ -1,0 +1,49 @@
+# FastAPI 核心框架
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# 資料庫相關
+sqlalchemy==2.0.23
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+pymongo==4.6.0
+redis==5.0.1
+motor==3.3.2
+
+# 向量資料庫
+pymilvus==2.3.4
+
+# 認證與安全
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+
+# AI 相關
+langchain==0.1.0
+langchain-google-genai==0.0.6
+openai==1.6.1
+langfuse==2.7.3
+ragas==0.1.1
+
+# 非同步處理
+celery==5.3.4
+redis==5.0.1
+
+# 工具庫
+python-dotenv==1.0.0
+httpx==0.25.2
+aiofiles==23.2.1
+Pillow==10.1.0
+
+# 開發工具
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+
+# 監控與日誌
+structlog==23.2.0
+prometheus-client==0.19.0 
